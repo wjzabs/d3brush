@@ -23,14 +23,35 @@
       .axis .tick line {
         stroke: #000;
       }
+
+      .background {
+        visibility: visible !important;
+      }
+
+      .extent {
+          visibility: visible !important;
+          fill: #c200a3;
+      }
+
+      .resize rect {
+          visibility: visible !important;
+          fill: #64e098;
+          display: block;
+      }
     </style>
   </head>
   <body>
    
+    <!-- <div>Hi Mom</div> -->
     <svg></svg>
+    <svg class="svg2"></svg>
+    <svg class="svg3"></svg>
     <div id="display"></div>
 
     <script src="http://d3js.org/d3.v3.js"></script>
+    <script src="inlet.js"></script>
+    <script src="obsBrush.js"></script>
+    
     <script src="table.js"></script>
     <script src="scatter.js"></script>
     <script src="brush.js"></script>

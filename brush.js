@@ -39,7 +39,6 @@ d3.chart.brush = function() {
       width: 1,
       height: height
     }).style("pointer-events", "none")
-
     rects.exit().remove()
 
     brush.on("brushend", function() {
@@ -55,11 +54,9 @@ d3.chart.brush = function() {
       .style({
         stroke: "#fff"
       })
-
       //emit filtered data
       dispatch.filter(filtered)
     })
-
     var axis = d3.svg.axis()
     .scale(scale)
     .orient("bottom")
@@ -74,17 +71,14 @@ d3.chart.brush = function() {
     agroup.selectAll("line")
       .style({ stroke: "#000"})
   }
-
   chart.highlight = function(data) {
     var rects = g.selectAll("rect.events")
     .style("stroke", "")
     .style("stroke-width", "")
-
     rects.data(data, function(d) { return d.data.id })
     .style("stroke", "orange")
     .style("stroke-width", 3)
   }
-
   chart.data = function(value) {
     if(!arguments.length) return data;
     data = value;
@@ -100,6 +94,5 @@ d3.chart.brush = function() {
     height = value;
     return chart;
   }
-
   return d3.rebind(chart, dispatch, "on");
 }
